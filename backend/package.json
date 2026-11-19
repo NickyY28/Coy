@@ -1,0 +1,22 @@
+{
+  "name": "coy-discover-backend",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc && tsc-alias",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.7",
+    "tsc-alias": "^1.9.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
