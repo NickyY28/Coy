@@ -1,3 +1,5 @@
+[![Coy Discover page](docs/screenshots/discover-page.png)](https://nicky-coy.vercel.app)
+
 # Coy Discover
 
 A mobile-first discovery demo inspired by Coy. It includes a swipe-based profile feed, persistent likes and passes, mutual matching, a matches screen, a Coy-style Home screen, and a demo reset action.
@@ -177,13 +179,13 @@ npm run dev --prefix frontend
 
 All list and action responses use `ApiResponse`.
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| `GET` | `/health` | Backend health check |
-| `GET` | `/feed` | Returns profiles not yet swiped by the logged-in user |
-| `POST` | `/swipe` | Records a like or pass |
-| `GET` | `/matches` | Returns all mutual matches |
-| `POST` | `/reset` | Restores the database to seed data |
+| Method | Endpoint   | Description                                           |
+| ------ | ---------- | ----------------------------------------------------- |
+| `GET`  | `/health`  | Backend health check                                  |
+| `GET`  | `/feed`    | Returns profiles not yet swiped by the logged-in user |
+| `POST` | `/swipe`   | Records a like or pass                                |
+| `GET`  | `/matches` | Returns all mutual matches                            |
+| `POST` | `/reset`   | Restores the database to seed data                    |
 
 ### Swipe Request
 
