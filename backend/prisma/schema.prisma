@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id
+  name      String
+  age       Int
+  photo     String
+  bio       String
+  city      String
+  interests String[]
+  createdAt DateTime @default(now())
+
+  swipesMade     Swipe[] @relation("SwipesMade")
+  swipesReceived Swipe[] @relation("SwipesReceived")
+}
+
+model Swipe {
+  id         String   @id @default(cuid())
+  fromUserId String
+  toUserId   String
+  action     SwipeAction
+  createdAt  DateTime @default(now())
+
+  fromUser User @relation("SwipesMade", fields: [fromUserId], references: [id], onDelete: Cascade)
+  toUser   User @relation("SwipesReceived", fields: [toUserId], references: [id], onDelete: Cascade)
+
+  @@unique([fromUserId, toUserId])
+}
+
+enum SwipeAction {
+  LIKE
+  PASS
+}
