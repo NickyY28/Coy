@@ -3,6 +3,7 @@ import cors from "cors";
 import { feedRouter } from "@/features/feed/feed.routes";
 import { swipeRouter } from "@/features/swipe/swipe.routes";
 import { matchRouter } from "@/features/match/match.routes";
+import { resetRouter } from "@/features/reset/reset.routes";
 import { errorMiddleware } from "@/middlewares/error.middleware";
 import { env } from "@/config/env";
 
@@ -18,6 +19,7 @@ app.get("/health", (_req, res) => res.json({ status: "ok" }));
 app.use("/feed", feedRouter);
 app.use("/swipe", swipeRouter);
 app.use("/matches", matchRouter);
+app.use("/reset", resetRouter);
 
 // Error handling middleware
 app.use(errorMiddleware);
